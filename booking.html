@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script type="module" src="https://unpkg.com/cally"></script>
+    <script src="/hotel-lindenhof/booking.js" defer></script>
+    <title>Hotel Lindenhof</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="navbar bg-base-100 shadow-sm">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  aria-label="Menu"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="-1"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              >
+                <li><a>Hotel</a></li>
+                <li><a>Zimmer</a></li>
+                <li><a>Kontakt</a></li>
+              </ul>
+            </div>
+            <a class="btn btn-ghost text-xl">Hotel Lindenhof</a>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+              <li><a>Hotel</a></li>
+              <li><a>Rooms</a></li>
+              <li><a>Contact</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <a class="btn">Book now</a>
+          </div>
+        </div>
+      </nav>
+      <section class="hero">
+        TO DO: HERO SECTION
+      </section>
+      <main>
+        <section class="search engine">
+            <form>
+                <div>
+                    <label class="label" for="checkin">Check in</label>
+                    <input type="date" class="input" />
+                </div>
+                <fieldset class="fieldset">
+                    <label class="label" for="nights">N° Nights</label>
+                    <input type="number" id="search-nights" class="input" />
+                </fieldset>
+                <fieldset class="fieldset">
+                    <label class="label" for="guests">N° Guests</label>
+                    <input type="number" id="search-guests" class="input" />
+                </fieldset>
+                <button id="search-btn">Search</button>
+            </form>
+        </section>
+        <section>
+            <div class="btn-tab">
+                <button>Choose your room</button>
+                <button>Finish your booking</button>
+            </div>
+            <div class="rooms-container">
+            <div class="card lg:card-side bg-base-100 shadow-sm">
+                <figure>
+                    <img
+                    src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
+                    alt="Album" />
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">New album is released!</h2>
+                    <p>Click the button to listen on Spotiwhy app.</p>
+                    <div class="card-actions justify-end">
+                    <button class="btn btn-primary">Listen</button>
+                    </div>
+                </div>
+            </div>
+                        <div class="card lg:card-side bg-base-100 shadow-sm">
+                <figure>
+                    <img
+                    src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
+                    alt="Album" />
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">New album is released!</h2>
+                    <p>Click the button to listen on Spotiwhy app.</p>
+                    <div class="card-actions justify-end">
+                    <button class="btn btn-primary">Listen</button>
+                    </div>
+                </div>
+            </div>
+                        <div class="card lg:card-side bg-base-100 shadow-sm">
+                <figure>
+                    <img
+                    src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
+                    alt="Album" />
+                </figure>
+                <div class="card-body">
+                    <h2 class="card-title">New album is released!</h2>
+                    <p>Click the button to listen on Spotiwhy app.</p>
+                    <div class="card-actions justify-end">
+                    <button class="btn btn-primary">Listen</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </section>
+        <aside>
+            <header>
+                <h2>Your booking</h2>
+            </header>
+            <main>
+                <section>
+                <div>
+                    <h3>Check in date</h3>
+                    <p>""</p>
+                </div>
+                <div>
+                    <h3>Number of nights</h3>
+                    <p>""</p>
+                </div>
+                <div>
+                    <h3>Number of guests</h3>
+                    <p>""</p>
+                </div>
+                </section>
+                <section>
+                    <div class="m-2 flex flex-col gap-2">
+                        <h3 class="font-bold">Do you have a Voucher?</h3>
+                        <input type="number" id="voucher-nr" class="input" placeholder="Voucher nr." />
+                        <button id="gutschein-btn"> Enter Voucher </button>
+                        <p id="gutschein-text"></p>
+                    </div>
+                </section>
+                <section>
+                    <h3>Total Price</h3>
+                    <p>""</p>
+                </section>
+                <div>
+                    <button>Continue Booking</button>
+                    <button>Back</button>
+                </div>
+            </main>
+        </aside>
+      </main>
+      <footer>
+        TO DO: FOOTER
+      </footer>
+  </body>
+</html>
