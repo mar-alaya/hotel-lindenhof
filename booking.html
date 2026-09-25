@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script type="module" src="https://unpkg.com/cally"></script>
     <script src="/hotel-lindenhof/booking.js" defer></script>
+    <link rel="stylesheet" href="./booking.css">
     <title>Hotel Lindenhof</title>
   </head>
   <body>
@@ -54,17 +55,21 @@
               <li><a>Contact</a></li>
             </ul>
           </div>
-          <div class="navbar-end">
-            <a class="btn">Book now</a>
-          </div>
         </div>
       </nav>
       <section class="hero">
-        TO DO: HERO SECTION
+        <div class="hero min-h-[30vh]" style="background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);">
+          <div class="hero-overlay"></div>
+          <div class="hero-content text-neutral-content text-center">
+            <div class="max-w-md">
+              <h1 class="mb-5 text-5xl font-bold">Plan your next unforgettable memories</h1>
+            </div>
+          </div>
+        </div>
       </section>
-      <main>
+      <main class="flex flex-col gap-5">
         <section class="search engine">
-            <form>
+            <form class="flex justify-center items-center gap-10 mt-5">
                 <div>
                     <label class="label" for="checkin">Check in</label>
                     <input type="date" class="input" />
@@ -77,83 +82,65 @@
                     <label class="label" for="guests">N° Guests</label>
                     <input type="number" id="search-guests" class="input" />
                 </fieldset>
-                <button id="search-btn">Search</button>
+                <button id="search-btn" class="btn">Search</button>
             </form>
         </section>
-        <section>
-            <div class="btn-tab">
-                <button>Choose your room</button>
-                <button>Finish your booking</button>
-            </div>
-            <div class="rooms-container">
-            <div class="card lg:card-side bg-base-100 shadow-sm">
-                <figure>
-                    <img
-                    src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
-                    alt="Album" />
-                </figure>
-                <div class="card-body">
-                    <h2 class="card-title">New album is released!</h2>
-                    <p>Click the button to listen on Spotiwhy app.</p>
-                    <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Listen</button>
-                    </div>
-                </div>
-            </div>
-                        <div class="card lg:card-side bg-base-100 shadow-sm">
-                <figure>
-                    <img
-                    src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
-                    alt="Album" />
-                </figure>
-                <div class="card-body">
-                    <h2 class="card-title">New album is released!</h2>
-                    <p>Click the button to listen on Spotiwhy app.</p>
-                    <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Listen</button>
-                    </div>
-                </div>
-            </div>
-                        <div class="card lg:card-side bg-base-100 shadow-sm">
-                <figure>
-                    <img
-                    src="https://img.daisyui.com/images/stock/photo-1494232410401-ad00d5433cfa.webp"
-                    alt="Album" />
-                </figure>
-                <div class="card-body">
-                    <h2 class="card-title">New album is released!</h2>
-                    <p>Click the button to listen on Spotiwhy app.</p>
-                    <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Listen</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        </section>
-        <aside>
-            <header>
-                <h2>Your booking</h2>
-            </header>
-            <main>
-                <section>
+        <section class="flex flex-wrap gap-5 m-5">
+          <div class="flex-1">
+              <div class="search-tab flex gap-3">
+                <h3 class="border-2">Choose your room</h3>
+                <h3 class="border-2">Finish your booking</h3>
+              </div>
+              <div>
+                <h2>Introduce your travel info in order to see the rooms.</h2>
+                <ul class="rooms-container">
+                </ul>
+              </div>
+              <div class="flex flex-col gap-5">
+                <h2>Personal Details</h2>
+                <form class="flex flex-col gap-5">
+                  <label> Name:
+                    <input type="text" name="name">
+                  </label>
+                  <label>Email:
+                    <input type="email" name="email">
+                  </label>
+                  <label> Your message:
+                    <textarea name="message"></textarea>
+                  </label>
+                  <button type="submit"  class="btn">Send</button>
+                </form>
                 <div>
+                  <h2>Cancellation Pollicy</h2>
+                  <p>The standard cancellation policy at most hotels allows you to cancel free of charge up to 24 or 48 hours before your scheduled arrival time on the date of your booking. If you decide to cancel after this deadline or fail to check in, the usual penalty is a charge equivalent to the cost of the first night’s stay plus taxes. Please note that this benefit is usually associated with flexible rates, as promotional or non-refundable rates do not allow for changes or refunds, and the terms and conditions are always governed by the hotel’s local time zone.</p>
+                </div>
+              </div>
+            </div>
+
+            <aside>
+              <header>
+                <h2>Your booking</h2>
+              </header>
+              <main>
+                <section>
+                  <div>
                     <h3>Check in date</h3>
                     <p>""</p>
-                </div>
-                <div>
+                  </div>
+                  <div>
                     <h3>Number of nights</h3>
                     <p>""</p>
-                </div>
-                <div>
+                  </div>
+                  <div>
                     <h3>Number of guests</h3>
                     <p>""</p>
-                </div>
+                 </div>
                 </section>
                 <section>
                     <div class="m-2 flex flex-col gap-2">
                         <h3 class="font-bold">Do you have a Voucher?</h3>
                         <input type="number" id="voucher-nr" class="input" placeholder="Voucher nr." />
-                        <button id="gutschein-btn"> Enter Voucher </button>
+                        <button id="gutschein-btn" class="btn"> Enter Voucher </button>
                         <p id="gutschein-text"></p>
                     </div>
                 </section>
@@ -162,14 +149,63 @@
                     <p>""</p>
                 </section>
                 <div>
-                    <button>Continue Booking</button>
-                    <button>Back</button>
+                    <button class="btn">Continue Booking</button>
+                    <button class="btn">Back</button>
                 </div>
             </main>
-        </aside>
+          </aside>
+        </section>
       </main>
-      <footer>
-        TO DO: FOOTER
-      </footer>
+        <footer class="footer sm:footer-horizontal bg-base-300 text-base-content p-10">
+          <nav>
+            <h6 class="footer-title">Services</h6>
+            <a class="link link-hover">Branding</a>
+            <a class="link link-hover">Design</a>
+            <a class="link link-hover">Marketing</a>
+            <a class="link link-hover">Advertisement</a>
+          </nav>
+          <nav>
+          <nav>
+            <h6 class="footer-title">Social</h6>
+            <div class="grid grid-flow-col gap-4">
+              <a>
+                <svg
+                  aria-label="Twitter"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="fill-current">
+                  <path
+                    d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path>
+                </svg>
+              </a>
+              <a>
+                <svg
+                  aria-label="YouTube"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="fill-current">
+                  <path
+                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"></path>
+                </svg>
+              </a>
+              <a>
+                <svg
+                  aria-label="Facebook"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  class="fill-current">
+                  <path
+                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"></path>
+                </svg>
+              </a>
+            </div>
+          </nav>
+        </footer>
   </body>
 </html>
