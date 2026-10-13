@@ -1,4 +1,4 @@
-const rooms_database = [
+export const rooms_database = [
   {
     id: 1,
     name: "Single room",

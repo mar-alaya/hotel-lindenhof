@@ -10,8 +10,7 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script type="module" src="https://unpkg.com/cally"></script>
-    <script src="/hotel-lindenhof/booking.js" defer></script>
-    <link rel="stylesheet" href="./booking.css">
+    <script type="module" src="./js/booking.js" defer></script>
     <title>Hotel Lindenhof</title>
   </head>
   <body>
@@ -100,7 +99,7 @@
 
         <section class="flex flex-wrap gap-5 m-5">
           <div class="flex-1">
-              <div id="step-rooms-container">
+              <div id="step-rooms-container" class="flex flex-col gap-10">
               </div>
 
               <div class="flex flex-col gap-5 p-4" id="step-form">
