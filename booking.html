@@ -68,7 +68,7 @@
       </section>
       <main class="flex flex-col gap-5">
         <section class="search engine">
-            <form class="flex justify-center items-center gap-10 mt-5">
+            <div class="flex justify-center items-center gap-10 mt-5">
                 <div>
                     <label class="label" for="checkin">Check in</label>
                     <input type="date" class="input" id="checkin" />
@@ -79,17 +79,17 @@
                 </div>
                 <fieldset class="fieldset">
                     <label class="label" for="guests">N° Adults (From 12 yo)</label>
-                    <input type="number" id="search-guests" class="input" />
+                    <input type="number" id="search-adults" class="input" />
                 </fieldset>
                 <fieldset class="fieldset">
                     <label class="label" for="guests">N° Children (Up to 11 yo)</label>
-                    <input type="number" id="search-guests" class="input" />
+                    <input type="number" id="search-children" class="input" />
                 </fieldset>
-                <button id="search-btn" class="btn">Search</button>
-            </form>
+                <button id="search-btn" class="btn btn-warning">Search</button>
+            </div>
         </section>
 
-        <div>
+        <div class="self-center">
           <ul class="steps p-4">
                 <li class="step step-primary">Choose your room</li>
                 <li class="step">Fill your details</li>
@@ -102,7 +102,7 @@
               <div id="step-rooms-container" class="flex flex-col gap-10">
               </div>
 
-              <div class="flex flex-col gap-5 p-4" id="step-form">
+              <div class="flex-col gap-5 p-4 hidden" id="step-form">
                 <h2>Personal Details</h2>
                 <form class="flex flex-col gap-5">
                   <input type="text" placeholder="First Name" class="input" />
@@ -154,55 +154,73 @@
                     I have read and accept the cancellation policy. *
                   </label>
                   <div class="flex">
-                    <button  class="btn">Back</button>
+                    <button  type="button" class="btn">Back</button>
                     <button type="submit" class="btn">Continue booking</button>
                   </div>
                 </form>
                 <div>
-                  <h2>Cancellation Pollicy</h2>
-                  <p>The standard cancellation policy at most hotels allows you to cancel free of charge up to 24 or 48 hours before your scheduled arrival time on the date of your booking. If you decide to cancel after this deadline or fail to check in, the usual penalty is a charge equivalent to the cost of the first night’s stay plus taxes. Please note that this benefit is usually associated with flexible rates, as promotional or non-refundable rates do not allow for changes or refunds, and the terms and conditions are always governed by the hotel’s local time zone.</p>
+                  <h2>Cancellation Policy</h2>
+                  <p>The standard cancellation policy at most hotels allows you to cancel free of charge up to 24 or 48 hours before your scheduled arrival time on the date of your booking. If you decide to cancel after this deadline or fail to check in, the usual penalty is a charge equivalent to the cost of the first night´s stay plus taxes. Please note that this benefit is usually associated with flexible rates, as promotional or non-refundable rates do not allow for changes or refunds, and the terms and conditions are always governed by the hotel’s local time zone.</p>
                 </div>
                 
               </div>
 
-              <div class="step-confirmed">
+              <div class="step-confirmed hidden">
                 <h2>Reservation Confirmed</h2>
                 <p>Congratulations! Your reservation is now confirmed.</p>
               </div>
             </div>
 
-            <aside>
-              <header>
-                <h2>Your booking</h2>
-              </header>
-              <main>
-                <section>
-                  <div>
-                    <h3>Check in date</h3>
-                    <p>""</p>
-                  </div>
-                  <div>
-                    <h3>Number of nights</h3>
-                    <p>""</p>
-                  </div>
-                  <div>
-                    <h3>Number of guests</h3>
-                    <p>""</p>
-                 </div>
-                </section>
-                <section>
-                    <div class="m-2 flex flex-col gap-2">
-                        <h3 class="font-bold">Do you have a Voucher?</h3>
-                        <input type="number" id="voucher-nr" class="input" placeholder="Voucher nr." />
-                        <button id="gutschein-btn" class="btn"> Enter Voucher </button>
-                        <p id="gutschein-text"></p>
+           <aside class="w-full lg:w-96 shrink-0 lg:top-5 self-start">
+              <div class="card bg-base-100 border border-base-300 shadow-md">
+                <div class="card-body gap-5">
+
+                  <h2 class="card-title">Your booking</h2>
+
+                  <div class="flex flex-col">
+                    <div class="flex justify-between items-center py-2 border-b border-base-300">
+                      <h3 class="text-sm text-base-content/70">Check in</h3>
+                      <p id="summary-checkin" class="font-semibold">–</p>
                     </div>
-                </section>
-                <section>
-                    <h3>Total Price</h3>
-                    <p>""</p>
-                </section>
-            </main>
+                    <div class="flex justify-between items-center py-2 border-b border-base-300">
+                      <h3 class="text-sm text-base-content/70">Check out</h3>
+                      <p id="summary-checkout" class="font-semibold">–</p>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-base-300">
+                      <h3 class="text-sm text-base-content/70">Number of adults</h3>
+                      <p id="summary-adults" class="font-semibold">–</p>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-base-300">
+                      <h3 class="text-sm text-base-content/70">Number of children</h3>
+                      <p id="summary-children" class="font-semibold">–</p>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-base-300">
+                      <h3 class="text-sm text-base-content/70">Selected room</h3>
+                      <p id="summary-room" class="font-semibold">–</p>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-col gap-2">
+                    <h3 class="font-bold">Do you have a Voucher?</h3>
+                    <div class="join w-full">
+                      <input type="number" id="voucher-nr" class="input join-item w-full" placeholder="Voucher nr." />
+                      <button id="gutschein-btn" class="btn btn-warning join-item">Apply</button>
+                    </div>
+                    <p id="gutschein-text" class="text-sm min-h-5"></p>
+                  </div>
+
+                  <div class="flex justify-between items-end pt-4 border-t border-base-300">
+                    <h3 class="font-bold">Total Price</h3>
+                    <p id="summary-total" class="text-3xl font-bold">–</p>
+                  </div>
+
+                  <div class="flex justify-center gap-4">
+                    <button  type="button" class="btn">Back</button>
+                    <button type="submit" class="btn btn-warning">Continue booking</button>
+                  </div>
+
+                </div>
+              </div>
           </aside>
         </section>
       </main>
@@ -214,7 +232,6 @@
             <a class="link link-hover">Marketing</a>
             <a class="link link-hover">Advertisement</a>
           </nav>
-          <nav>
           <nav>
             <h6 class="footer-title">Social</h6>
             <div class="grid grid-flow-col gap-4">
