@@ -8,15 +8,16 @@
       rel="stylesheet"
       type="text/css"
     />
+    <link rel="stylesheet" href="./styles/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script type="module" src="https://unpkg.com/cally"></script>
     <script src="/hotel-lindenhof/index.js" defer></script>
     <title>Hotel Lindenhof</title>
   </head>
   <body>
-    <header>
+    <header class="bg-[url(./assets/hero.jpg)] bg-cover bg-center">
       <nav>
-        <div class="navbar bg-base-100 shadow-sm">
+        <div class="navbar p-5">
           <div class="navbar-start">
             <div class="dropdown">
               <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -41,52 +42,45 @@
                 class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
               >
                 <li><a>Hotel</a></li>
-                <li><a>Zimmer</a></li>
-                <li><a>Kontakt</a></li>
+                <li><a>Rooms</a></li>
+                <li><a>Blog</a></li>
               </ul>
             </div>
-            <a class="btn btn-ghost text-xl">Hotel Lindenhof</a>
+            <a href="index.html"
+              ><img src="./assets/logo.png" class="lg:h-20 h-5"
+            /></a>
           </div>
           <div class="navbar-center hidden lg:flex">
-            <ul class="menu menu-horizontal px-1">
-              <li><a>Hotel</a></li>
+            <ul
+              class="menu menu-horizontal px-1 text-white font-semibold uppercase"
+            >
+              <li><a>Activities</a></li>
               <li><a>Rooms</a></li>
-              <li><a>Contact</a></li>
+              <li><a>Blog</a></li>
             </ul>
           </div>
           <div class="navbar-end">
-            <a class="btn">Book now</a>
+            <a href="booking.html" class="btn btn-main">BOOK NOW</a>
           </div>
         </div>
       </nav>
-
-      <section class="section-header">
-        <div
-          class="hero min-h-screen"
-          style="
-            background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);
-          "
-        >
-          <div class="hero-overlay"></div>
-          <div class="hero-content text-neutral-content text-center">
-            <div class="max-w-md">
-              <h1 class="mb-5 text-5xl font-bold">
-                More than a place to sleep
-              </h1>
-              <p class="mb-5">
-                Erlebe exklusiven Komfort und unvergessliche Momente im Herzen
-                der Stadt.
-              </p>
-              <a class="btn btn-primary" href="#section-buchung"
-                >Jetzt buchen</a
-              >
-            </div>
-          </div>
+      <div
+        class="hero min-h-[80vh] hero-content text-neutral-content justify-start w-full px-10 md:px-20"
+      >
+        <div class="max-w-md">
+          <h1 class="mb-5 text-7xl font-bold text-[#F7F5EF] text-shadow-lg">
+            Where the mountains feel like
+            <span class="italic tracking-wide text-[#193D32] text-shadow-lg"
+              >home</span
+            >
+          </h1>
+          <button class="btn btn-lg btn-main">
+            <a href="booking.html">Book now</a>
+          </button>
+          <button class="btn btn-lg btn-secondary">Check Activities</button>
         </div>
-      </section>
+      </div>
     </header>
-    <main>
-      
-    </main>
+    <main></main>
   </body>
 </html>

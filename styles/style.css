@@ -1,0 +1,19 @@
+.btn-main {
+  background-color: #a18766;
+  color: whitesmoke;
+  border: #193d32;
+  box-shadow: none;
+  &:hover {
+    background-color: #6d5b45;
+  }
+}
+
+.btn-secondary {
+  background-color: #f7f5efc2;
+  color: black;
+  border: #193d32;
+  box-shadow: none;
+  &:hover {
+    background-color: whitesmoke;
+  }
+}
