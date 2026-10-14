@@ -69,8 +69,10 @@ continue_btn.addEventListener("click", () => {
 const finish_btn = document.querySelector("#finish-btn");
 const sucess = document.querySelector("#step-confirmed");
 const breadcrumb_sucess = document.querySelector("#step-three");
+const reservation_form = document.querySelector("#reservation-form");
 
-finish_btn.addEventListener("click", () => {
+reservation_form.addEventListener("submit", () => {
+  event.preventDefault();
   form.classList.add("hidden");
   sucess.classList.remove("hidden");
   breadcrumb_sucess.classList.add("step-primary");
