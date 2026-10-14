@@ -1,5 +1,8 @@
+import { selectRoom } from "../utils/helpers.js";
+
 export function renderRooms(roomItem) {
   const { name, baseNightPrice, description, ksp, image } = roomItem;
+  let selected = false;
 
   const room_card = document.createElement("div");
   room_card.classList.add(
@@ -76,6 +79,21 @@ export function renderRooms(roomItem) {
   const add_btn = document.createElement("button");
   add_btn.innerText = "Select room";
   add_btn.classList.add("btn", "btn-warning");
+
+  add_btn.addEventListener("click", () => {
+    if (selected) {
+      selected = false;
+      add_btn.innerText = "Select room";
+      add_btn.classList.remove("btn-ghost");
+      add_btn.classList.add("btn-warning");
+    } else {
+      selected = true;
+      add_btn.innerText = "Selected";
+      add_btn.classList.remove("btn-warning");
+      add_btn.classList.add("btn-ghost");
+      selectRoom(roomItem);
+    }
+  });
 
   action_col.appendChild(price_box);
   action_col.appendChild(add_btn);
