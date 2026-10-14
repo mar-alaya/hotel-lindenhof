@@ -78,21 +78,22 @@ export function renderRooms(roomItem) {
 
   const add_btn = document.createElement("button");
   add_btn.innerText = "Select room";
-  add_btn.classList.add("btn", "btn-warning");
+  add_btn.classList.add("btn", "btn-warning", "btn-selected");
 
   add_btn.addEventListener("click", () => {
-    if (selected) {
-      selected = false;
-      add_btn.innerText = "Select room";
-      add_btn.classList.remove("btn-ghost");
-      add_btn.classList.add("btn-warning");
-    } else {
-      selected = true;
-      add_btn.innerText = "Selected";
-      add_btn.classList.remove("btn-warning");
-      add_btn.classList.add("btn-ghost");
-      selectRoom(roomItem);
-    }
+    const buttons = document.querySelectorAll(".btn-selected");
+
+    buttons.forEach((button) => {
+      if (button !== add_btn) {
+        button.innerText = "Select room";
+        button.classList.remove("btn-ghost");
+        button.classList.add("btn-warning");
+      }
+    });
+
+    add_btn.innerText = "Selected";
+    add_btn.classList.add("btn-ghost");
+    selectRoom(roomItem);
   });
 
   action_col.appendChild(price_box);
