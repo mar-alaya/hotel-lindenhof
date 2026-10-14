@@ -8,6 +8,7 @@ const summary_children = document.querySelector("#summary-children");
 const summary_room = document.querySelector("#summary-room");
 const summary_price_night = document.querySelector("#summary-night");
 const summary_total = document.querySelector("#summary-total");
+const summary_discount = document.querySelector("#summary-discount");
 
 export function calcNights(checkout, checkin) {
   const stay_miliseconds = checkout - checkin;
@@ -21,16 +22,24 @@ export function updateSummary() {
   summary_children.innerText = search.children_nr;
   summary_room.innerText = selected_room.name;
   summary_price_night.innerText = selected_room.base_price + "€";
-}
-
-export function selectRoom(roomItem) {
-  selected_room.name = roomItem.name;
-  selected_room.base_price = roomItem.baseNightPrice;
 
   search.stay_nights = calcNights(search.checkout_date, search.checkin_date);
 
   let total_price = search.stay_nights * selected_room.base_price;
   summary_total.innerText = total_price + "€";
+
+  if (search.voucher) {
+    const discount = total_price * 0.1;
+    const new_Price = total_price - discount;
+
+    summary_discount.innerText = discount + "€";
+    summary_total.innerText = new_Price + "€";
+  }
+}
+
+export function selectRoom(roomItem) {
+  selected_room.name = roomItem.name;
+  selected_room.base_price = roomItem.baseNightPrice;
 
   updateSummary();
 }

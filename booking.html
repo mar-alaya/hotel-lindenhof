@@ -92,8 +92,8 @@
         <div class="self-center">
           <ul class="steps p-4">
                 <li class="step step-primary">Choose your room</li>
-                <li class="step">Fill your details</li>
-                <li class="step">Reservation confirmed</li>
+                <li class="step" id="step-two">Fill your details</li>
+                <li class="step" id="step-three">Reservation confirmed</li>
               </ul>
         </div>
 
@@ -154,10 +154,7 @@
                     <input type="checkbox" class="checkbox" required/>
                     I have read and accept the cancellation policy. *
                   </label>
-                  <div class="flex">
-                    <button  type="button" class="btn">Back</button>
-                    <button type="submit" class="btn">Continue booking</button>
-                  </div>
+                   <button class="btn btn-warning hidden" id="finish-btn" type="submit">⚿ Confirm booking</button>
                 </form>
                 <div>
                   <h2>Cancellation Policy</h2>
@@ -166,9 +163,10 @@
                 
               </div>
 
-              <div class="step-confirmed hidden">
-                <h2>Reservation Confirmed</h2>
-                <p>Congratulations! Your reservation is now confirmed.</p>
+              <div class="hidden" id="step-confirmed">
+                <h2 class="text-3xl font-bold">Reservation Confirmed</h2>
+                <p class="text-base-content/70 max-w-md">Congratulations! Your reservation is now confirmed.</p>
+                <button class="btn btn-warning"><a href="index.html">Go to homepage</a></button>
               </div>
             </div>
 
@@ -204,15 +202,20 @@
                   <div class="flex flex-col gap-2">
                     <h3 class="font-bold">Do you have a Voucher?</h3>
                     <div class="join w-full">
-                      <input type="number" id="voucher-nr" class="input join-item w-full" placeholder="Voucher nr." />
-                      <button id="gutschein-btn" class="btn btn-warning join-item">Apply</button>
+                      <input type="text" id="voucher-nr" class="input join-item w-full" placeholder="Voucher nr." />
+                      <button id="voucher-btn" class="btn btn-warning join-item">Apply</button>
                     </div>
-                    <p id="gutschein-text" class="text-sm min-h-5"></p>
+                    <p id="voucher-text" class="text-sm min-h-5"></p>
                   </div>
 
                    <div class="pt-4 border-t border-base-300">
                     <h3 class="font-semibold">Price per night</h3>
                     <p id="summary-night" class="text-xl font-semibold">–</p>
+                  </div>
+
+                    <div class="pt-4 border-t border-base-300">
+                    <h3 class="font-light">Discount</h3>
+                    <p id="summary-discount" class="text-md font-light">0€</p>
                   </div>
 
                   <div class="flex flex-col justify-between items-end pt-4 border-t border-base-300">
@@ -221,8 +224,8 @@
                   </div>
 
                   <div class="flex justify-center gap-4">
-                    <button  type="button" class="btn">Back</button>
-                    <button type="submit" class="btn btn-warning">Continue booking</button>
+                    <button class="btn btn-warning" id="continue-btn">Continue booking</button>
+
                   </div>
 
                 </div>
