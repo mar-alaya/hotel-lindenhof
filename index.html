@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./styles/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script type="module" src="https://unpkg.com/cally"></script>
-    <script src="/hotel-lindenhof/index.js" defer></script>
+    <script type="module" src="./js/index.js" defer></script>
     <style type="text/tailwindcss">
       @theme {
         --color-pine: #193d32;
@@ -469,11 +469,14 @@
               <h3 class="text-xl font-bold text-black font-display">
                 Welcome!
               </h3>
-              <p class="py-4 text-black">
+              <p id="email-text" class="py-4 text-black">
                 Write your email address below to get your discount.
               </p>
-              <form class="flex flex-col justify-center items-center gap-3">
-                <label class="input validator">
+              <form
+                id="newsletter-form"
+                class="flex flex-col justify-center items-center gap-3"
+              >
+                <label id="email-field" class="input validator">
                   <svg
                     class="h-[1em] opacity-50"
                     xmlns="http://www.w3.org/2000/svg"
@@ -493,6 +496,7 @@
                     </g>
                   </svg>
                   <input
+                    id="newsletter-input"
                     type="email"
                     placeholder="mail@site.com"
                     required
@@ -502,19 +506,24 @@
                 <div class="validator-hint hidden">
                   Enter valid email address
                 </div>
-                <p class="text-black my-2 hidden">
+                <p id="voucher-text" class="text-black my-2 hidden">
                   Congratulations! Your discount code is: <br /><span
                     class="font-bold"
-                    >Welcome10</span
+                    >welcome10</span
                   >
                 </p>
+                <p id="email-validator" class="hidden text-gray-800 text-sm">
+                  Email Address alredy registered. Try again.
+                </p>
                 <a
+                  id="voucher-btn"
                   href="booking.html"
                   target="_blank"
                   class="btn btn-main btn-md hidden"
-                  >BOOK NOW</a
+                  >Book now</a
                 >
                 <button
+                  id="email-btn"
                   type="submit"
                   class="btn border-0 bg-wood px-6 text-white hover:bg-[#a78460]"
                 >

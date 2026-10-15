@@ -1,5 +1,6 @@
 import { search } from "../data/search.js";
 import { selected_room } from "../data/search.js";
+import { suscribers } from "../data/newsletter.js";
 
 const summary_checkin = document.querySelector("#summary-checkin");
 const summary_checkout = document.querySelector("#summary-checkout");
@@ -42,4 +43,20 @@ export function selectRoom(roomItem) {
   selected_room.base_price = roomItem.baseNightPrice;
 
   updateSummary();
+}
+
+// Local Storage Functionen
+
+export function saveSuscriber() {
+  localStorage.setItem("suscribers", JSON.stringify(suscribers));
+}
+
+export function loadSuscribers() {
+  const suscriber_list = localStorage.getItem("suscribers");
+
+  if (suscriber_list) {
+    const savedSuscribers = JSON.parse(suscriber_list);
+
+    suscribers.splice(0, suscribers.length, ...savedSuscribers);
+  }
 }
