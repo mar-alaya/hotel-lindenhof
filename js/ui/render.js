@@ -1,4 +1,5 @@
 import { selectRoom } from "../utils/helpers.js";
+import { search } from "../data/search.js";
 
 export function renderRooms(roomItem) {
   const { name, baseNightPrice, description, ksp, image } = roomItem;
@@ -66,7 +67,9 @@ export function renderRooms(roomItem) {
   price_box.classList.add("sm:text-right");
 
   const base_price = document.createElement("span");
-  base_price.innerText = baseNightPrice + " €";
+  const room_price =
+    baseNightPrice - baseNightPrice * 0.05 * search.children_nr;
+  base_price.innerText = room_price + " €";
   base_price.classList.add("text-2xl", "font-bold");
 
   const price_unit = document.createElement("span");
