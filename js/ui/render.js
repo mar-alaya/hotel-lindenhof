@@ -45,7 +45,7 @@ export function renderRooms(roomItem) {
 
   const room_ksp = document.createElement("div");
   room_ksp.innerText = ksp;
-  room_ksp.classList.add("badge", "badge-warning");
+  room_ksp.classList.add("badge", "bg-[#b99670]", "text-white");
   room_card.appendChild(room_ksp);
 
   info_col.appendChild(room_name);
@@ -78,7 +78,16 @@ export function renderRooms(roomItem) {
 
   const add_btn = document.createElement("button");
   add_btn.innerText = "Select room";
-  add_btn.classList.add("btn", "btn-warning", "btn-selected");
+  add_btn.classList.add(
+    "btn-selected",
+    "btn",
+    "border-none",
+    "bg-[#193D32]",
+    "px-7",
+    "text-white",
+    "hover:bg-[#38634B]",
+    "md:self-auto",
+  );
 
   add_btn.addEventListener("click", () => {
     const buttons = document.querySelectorAll(".btn-selected");
@@ -86,13 +95,26 @@ export function renderRooms(roomItem) {
     buttons.forEach((button) => {
       if (button !== add_btn) {
         button.innerText = "Select room";
-        button.classList.remove("btn-ghost");
-        button.classList.add("btn-warning");
+        button.classList.remove("bg-white", "text-[#193D32]");
+        button.classList.add(
+          "btn",
+          "border-none",
+          "bg-[#193D32]",
+          "px-7",
+          "text-white",
+          "hover:bg-[#38634B]",
+          "md:self-auto",
+        );
       }
     });
 
     add_btn.innerText = "Selected";
-    add_btn.classList.add("btn-ghost");
+    add_btn.classList.remove(
+      "bg-[#193D32]",
+      "text-white",
+      "hover:bg-[#38634B]",
+    );
+    add_btn.classList.add("bg-white", "text-[#193D32]");
     selectRoom(roomItem);
   });
 

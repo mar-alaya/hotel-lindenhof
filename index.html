@@ -14,15 +14,10 @@
     <script type="module" src="./js/index.js" defer></script>
     <style type="text/tailwindcss">
       @theme {
-        --color-pine: #193d32;
-        --color-forest: #38634b;
-        --color-cream: #f7f5ef;
-        --color-wood: #b99670;
-      }
-    </style>
-    <style>
-      .font-display {
-        font-family: "Playfair Display", Georgia, serif;
+        --color-primary: #193d32;
+        --color-secondary: #38634b;
+        --color-bg: #f7f5ef;
+        --color-accent: #b99670;
       }
     </style>
     <title>Hotel Lindenhof</title>
@@ -239,7 +234,7 @@
         >
           <div>
             <p
-              class="mb-3 text-xs font-bold uppercase tracking-[.18em] text-wood"
+              class="mb-3 text-xs font-bold uppercase tracking-[.18em] text-accent"
             >
               Our rooms
             </p>
@@ -254,7 +249,7 @@
             </p>
             <a
               href="#rooms"
-              class="btn mt-7 border-0 bg-pine px-6 text-white hover:bg-forest"
+              class="btn mt-7 border-0 bg-primary px-6 text-white hover:bg-secondary"
               >Check all rooms</a
             >
           </div>
@@ -296,7 +291,10 @@
         </div>
       </section>
 
-      <section id="gastronomy" class="grid bg-pine text-white lg:grid-cols-2">
+      <section
+        id="gastronomy"
+        class="grid bg-primary text-white lg:grid-cols-2"
+      >
         <div
           class="flex items-center px-5 py-16 sm:px-8 md:py-20 lg:justify-end lg:px-12"
         >
@@ -316,7 +314,7 @@
             </p>
             <a
               href="booking.html"
-              class="btn mt-7 border-0 bg-wood px-6 text-white hover:bg-[#a78460]"
+              class="btn mt-7 border-0 bg-accent px-6 text-white hover:bg-[#a78460]"
               >Check our Restaurant</a
             >
           </div>
@@ -324,7 +322,7 @@
         <img
           class="h-87.5 w-full object-cover sm:h-115 lg:h-full lg:min-h-137.5"
           loading="lazy"
-          alt="Comfortable hotel room with warm natural wood"
+          alt="Frittaten Soup Dish"
           src="https://t4.ftcdn.net/jpg/04/52/00/17/360_F_452001748_EcBMZ1b2r4jRe5XVm3ZLh3V6ok0N7Mrw.jpg"
         />
       </section>
@@ -435,7 +433,7 @@
       </section>
 
       <section
-        class="bg-pine text-white flex flex-col justify-center items-center p-15 text-center"
+        class="bg-primary text-white flex flex-col justify-center items-center p-15 text-center"
       >
         <div class="max-w-2xl">
           <h2 class="mt-3 font-serif text-4xl leading-tight md:text-5xl">
@@ -452,7 +450,7 @@
         <div>
           <!-- You can open the modal using ID.showModal() method -->
           <button
-            class="btn mt-7 border-0 bg-wood px-6 text-white hover:bg-[#a78460]"
+            class="btn mt-7 border-0 bg-accent px-6 text-white hover:bg-[#a78460]"
             onclick="my_modal_3.showModal()"
           >
             Get my discount
@@ -525,7 +523,7 @@
                 <button
                   id="email-btn"
                   type="submit"
-                  class="btn border-0 bg-wood px-6 text-white hover:bg-[#a78460]"
+                  class="btn border-0 bg-accent px-6 text-white hover:bg-[#a78460]"
                 >
                   Send
                 </button>
@@ -537,7 +535,7 @@
     </main>
 
     <footer
-      class="footer sm:footer-horizontal bg-neutral text-neutral-content p-10 mt-10 bg-pine text-white"
+      class="footer sm:footer-horizontal bg-neutral text-neutral-content p-10 mt-10 bg-primary text-white"
     >
       <aside>
         <a href="index.html"
