@@ -10,10 +10,12 @@ const checkout = document.querySelector("#checkout");
 const adults = document.querySelector("#search-adults");
 const children = document.querySelector("#search-children");
 const search_btn = document.querySelector("#search-btn");
+const booking_engine = document.querySelector("#booking-engine");
 
 // Step 1 - Search Engine
 
-search_btn.addEventListener("click", () => {
+booking_engine.addEventListener("submit", () => {
+  event.preventDefault();
   search.checkin_date = new Date(checkin.value);
   search.checkout_date = new Date(checkout.value);
   search.adult_nr = Number(adults.value);

@@ -57,42 +57,58 @@
     </header>
     <main class="flex flex-col gap-5 w-full min-w-0 bg-bg">
       <section class="search engine">
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 items-end gap-4 lg:gap-6 mt-5 w-full max-w-7xl mx-auto px-4 sm:px-6"
-        >
-          <div class="fieldset w-full min-w-0">
-            <label class="label" for="checkin">Check in</label>
-            <input type="date" class="input w-full min-w-0" id="checkin" />
-          </div>
-          <div class="fieldset w-full min-w-0">
-            <label class="label" for="checkout">Check out</label>
-            <input type="date" class="input w-full min-w-0" id="checkout" />
-          </div>
-          <fieldset class="fieldset w-full min-w-0">
-            <label class="label" for="guests">N° Adults (From 12 yo)</label>
-            <input
-              type="number"
-              id="search-adults"
-              class="input w-full min-w-0"
-              min="0"
-            />
-          </fieldset>
-          <fieldset class="fieldset w-full min-w-0">
-            <label class="label" for="guests">N° Children (Up to 11 yo)</label>
-            <input
-              type="number"
-              id="search-children"
-              class="input w-full min-w-0"
-              min="0"
-            />
-          </fieldset>
-          <button
-            id="search-btn"
-            class="btn shrink-0 self-start border-none bg-[#193D32] px-7 text-white hover:bg-[#38634B] md:self-auto"
+        <form id="booking-engine">
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 items-end gap-4 lg:gap-6 mt-5 w-full max-w-7xl mx-auto px-4 sm:px-6"
           >
-            Search
-          </button>
-        </div>
+            <div class="fieldset w-full min-w-0">
+              <label class="label" for="checkin">Check in</label>
+              <input
+                type="date"
+                class="input w-full min-w-0"
+                id="checkin"
+                required
+              />
+            </div>
+            <div class="fieldset w-full min-w-0">
+              <label class="label" for="checkout">Check out</label>
+              <input
+                type="date"
+                class="input w-full min-w-0"
+                id="checkout"
+                required
+              />
+            </div>
+            <fieldset class="fieldset w-full min-w-0">
+              <label class="label" for="guests">N° Adults (From 12 yo)</label>
+              <input
+                type="number"
+                id="search-adults"
+                class="input w-full min-w-0"
+                min="0"
+                required
+              />
+            </fieldset>
+            <fieldset class="fieldset w-full min-w-0">
+              <label class="label" for="guests"
+                >N° Children (Up to 11 yo)</label
+              >
+              <input
+                type="number"
+                id="search-children"
+                class="input w-full min-w-0"
+                min="0"
+                required
+              />
+            </fieldset>
+            <button
+              id="search-btn"
+              class="btn shrink-0 self-start border-none bg-[#193D32] px-7 text-white hover:bg-[#38634B] md:self-auto"
+            >
+              Search
+            </button>
+          </div>
+        </form>
       </section>
 
       <div class="self-center">
