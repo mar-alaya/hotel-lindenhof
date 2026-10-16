@@ -22,11 +22,15 @@ export function updateSummary() {
   summary_adults.innerText = search.adult_nr;
   summary_children.innerText = search.children_nr;
   summary_room.innerText = selected_room.name;
-  summary_price_night.innerText = selected_room.base_price + "€";
 
   search.stay_nights = calcNights(search.checkout_date, search.checkin_date);
 
-  let total_price = search.stay_nights * selected_room.base_price;
+  const price_night =
+    selected_room.base_price -
+    selected_room.base_price * 0.05 * search.children_nr;
+  summary_price_night.innerText = price_night + "€";
+
+  let total_price = search.stay_nights * price_night;
   summary_total.innerText = total_price + "€";
 
   if (search.voucher) {
