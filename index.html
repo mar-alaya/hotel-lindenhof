@@ -25,7 +25,7 @@
   <body>
     <header class="bg-[url(./assets/hero.jpg)] bg-cover bg-center">
       <nav>
-        <div class="navbar p-5">
+        <div class="navbar gap-2 px-3 py-4 sm:px-5">
           <div class="navbar-start">
             <div class="dropdown">
               <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -56,7 +56,7 @@
               </ul>
             </div>
             <a href="index.html"
-              ><img src="./assets/logo.png" class="lg:h-20 h-5"
+              ><img src="./assets/logo.png" class="h-10 w-auto sm:h-12 lg:h-20"
             /></a>
           </div>
           <div class="navbar-center hidden lg:flex">
@@ -77,19 +77,21 @@
         </div>
       </nav>
       <div
-        class="hero min-h-[80vh] hero-content text-neutral-content justify-center w-full px-10 md:px-20"
+        class="hero min-h-[80vh] w-full justify-center px-5 sm:px-10 md:px-20"
       >
         <div class="max-w-lg">
           <h1
-            class="mb-8 text-7xl font-medium text-[#F7F5EF] text-shadow-lg font-display tracking-wide leading-18"
+            class="mb-8 font-display text-4xl leading-tight font-medium tracking-wide text-[#F7F5EF] text-shadow-lg sm:text-5xl md:text-6xl lg:text-7xl lg:leading-18"
           >
             Where mountains feel like
             <span class="tracking-wide italic font-bold">home</span>
           </h1>
-          <button class="btn btn-lg btn-main mr-1">
+          <button class="btn btn-lg btn-main mr-1 sm:btn-md">
             <a href="booking.html" target="_blank">Book now</a>
           </button>
-          <button class="btn btn-lg btn-secondary">Check Activities</button>
+          <button class="btn btn-lg btn-secondary sm:btn-md">
+            Check Activities
+          </button>
         </div>
       </div>
     </header>
@@ -228,7 +230,7 @@
         </div>
       </section>
 
-      <section id="about" class="bg-bg py-16 md:py-24">
+      <section id="rooms-section" class="bg-bg py-16 md:py-24">
         <div
           class="mx-auto grid max-w-7xl gap-10 px-5 sm:px-8 lg:grid-cols-[.95fr_2.05fr] lg:items-center lg:gap-12 lg:px-12"
         >
@@ -253,8 +255,11 @@
               >Check all rooms</a
             >
           </div>
-          <div id="rooms" class="flex justify-end gap-2">
-            <div class="card w-60 shadow-sm bg-white">
+          <div
+            id="rooms"
+            class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-3"
+          >
+            <div class="card w-full min-w-0 shadow-sm bg-white">
               <figure>
                 <img src="./assets/rooms/single-room.jpg" alt="Single Room" />
               </figure>
@@ -263,7 +268,7 @@
                 <p>Compact and quiet room, ideal for solo travellers.</p>
               </div>
             </div>
-            <div class="card w-60 shadow-sm bg-white">
+            <div class="card w-full min-w-0 shadow-sm bg-white">
               <figure>
                 <img src="./assets/rooms/double-room.jpg" alt="Double Room" />
               </figure>
@@ -272,7 +277,7 @@
                 <p>Comfortable with a double bed for couples or friends.</p>
               </div>
             </div>
-            <div class="card w-60 shadow-sm bg-white">
+            <div class="card w-full min-w-0 shadow-sm bg-white">
               <figure>
                 <img src="./assets/rooms/junior-suite.jpg" alt="Junior Suite" />
               </figure>
@@ -427,7 +432,7 @@
       </section>
 
       <section
-        class="bg-primary text-white flex flex-col justify-center items-center p-20 text-center"
+        class="section-newsletter flex flex-col items-center justify-center bg-primary px-5 py-16 text-center text-white sm:px-10 md:p-20"
       >
         <div class="max-w-2xl">
           <h2 class="mt-3 font-serif text-4xl leading-tight md:text-5xl">
@@ -527,7 +532,7 @@
       </section>
 
       <section
-        class="flex flex-col items-center justify-center lg:py-20 bg-bg p-10 text-center"
+        class="section-reviews flex flex-col items-center justify-center lg:py-20 bg-bg p-10 text-center"
       >
         <p
           class="mb-3 text-xs font-bold uppercase tracking-[.18em] text-accent"
