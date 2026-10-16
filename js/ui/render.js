@@ -1,5 +1,6 @@
 import { selectRoom } from "../utils/helpers.js";
 import { search } from "../data/search.js";
+import { reviews_list } from "../data/reviews_api.js";
 
 export function renderRooms(roomItem) {
   const { name, baseNightPrice, description, ksp, image } = roomItem;
@@ -131,4 +132,33 @@ export function renderRooms(roomItem) {
   room_card.appendChild(card_body);
 
   return room_card;
+}
+
+export function renderReviews(reviewItem) {
+  const { name, body } = reviewItem;
+
+  const review_card = document.createElement("div");
+  review_card.classList.add(
+    "p-5",
+    "bg-white",
+    "min-h-60",
+    "flex",
+    "flex-col",
+    "justify-center",
+    "shadow-sm",
+    "rounded-lg",
+    "mt-4",
+  );
+
+  const review_body = document.createElement("p");
+  review_body.innerText = body;
+  review_body.classList.add("font-semibold", "text-left");
+  review_card.appendChild(review_body);
+
+  const review_name = document.createElement("p");
+  review_name.innerText = name;
+  review_name.classList.add("text-gray-500", "text-left", "capitalize", "mt-2");
+  review_card.appendChild(review_name);
+
+  return review_card;
 }

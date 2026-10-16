@@ -1,6 +1,8 @@
 import { suscribers } from "./data/newsletter.js";
 import { saveSuscriber } from "./utils/helpers.js";
 import { loadSuscribers } from "./utils/helpers.js";
+import { reviews_list } from "./data/reviews_api.js";
+import { renderReviews } from "./ui/render.js";
 
 const newsletter_form = document.querySelector("#newsletter-form");
 const newsletter_email = document.querySelector("#newsletter-input");
@@ -33,4 +35,10 @@ newsletter_form.addEventListener("submit", () => {
     voucher_text.classList.remove("hidden");
     voucher_btn.classList.remove("hidden");
   }
+});
+
+const review_container = document.querySelector("#review-container");
+
+reviews_list.forEach((review) => {
+  review_container.appendChild(renderReviews(review));
 });
