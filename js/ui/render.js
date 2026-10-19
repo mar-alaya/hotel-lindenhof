@@ -176,23 +176,33 @@ export function renderBlog(articleItem) {
     "border-base-300",
     "shadow-md",
     "my-5",
-    "p-3",
+    "p-10",
+    "flex",
+    "gap-20",
   );
+
+  const card_right = document.createElement("div");
+  card_right.classList.add("flex-1", "flex", "flex-col", "gap-2");
 
   const article_title = document.createElement("h3");
   article_title.innerText = title;
-  article_title.classList.add("card-title");
-  article_card.appendChild(article_title);
+  article_title.classList.add("card-title", "text-xl");
+  card_right.appendChild(article_title);
 
   const article_body = document.createElement("p");
   article_body.innerText = body;
   article_body.classList.add("text-md", "text-base-content/70");
-  article_card.appendChild(article_body);
+  card_right.appendChild(article_body);
+
+  article_card.appendChild(card_right);
+
+  const card_left = document.createElement("div");
+  card_left.classList.add("flex", "flex-col", "gap-2");
 
   const article_views = document.createElement("p");
-  article_views.innerText = views;
+  article_views.innerText = views + " Views";
   article_views.classList.add("text-sm", "text-base-content/70");
-  article_card.appendChild(article_views);
+  card_left.appendChild(article_views);
 
   const read_btn = document.createElement("button");
   read_btn.innerText = "Read more";
@@ -205,7 +215,9 @@ export function renderBlog(articleItem) {
     "hover:bg-[#38634B]",
     "md:self-auto",
   );
-  article_card.appendChild(read_btn);
+  card_left.appendChild(read_btn);
+
+  article_card.appendChild(card_left);
 
   return article_card;
 }
