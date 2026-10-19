@@ -1,6 +1,7 @@
 import { selectRoom } from "../utils/helpers.js";
 import { search } from "../data/search.js";
 import { reviews_list } from "../data/reviews_api.js";
+import { article_list } from "../data/blog_api.js";
 
 export function renderRooms(roomItem) {
   const { name, baseNightPrice, description, ksp, image } = roomItem;
@@ -161,4 +162,50 @@ export function renderReviews(reviewItem) {
   review_card.appendChild(review_name);
 
   return review_card;
+}
+
+export function renderBlog(articleItem) {
+  const { title, body, views } = articleItem;
+
+  const article_card = document.createElement("div");
+  article_card.classList.add(
+    "card",
+    "sm:card-side",
+    "bg-base-100",
+    "border",
+    "border-base-300",
+    "shadow-md",
+    "my-5",
+    "p-3",
+  );
+
+  const article_title = document.createElement("h3");
+  article_title.innerText = title;
+  article_title.classList.add("card-title");
+  article_card.appendChild(article_title);
+
+  const article_body = document.createElement("p");
+  article_body.innerText = body;
+  article_body.classList.add("text-md", "text-base-content/70");
+  article_card.appendChild(article_body);
+
+  const article_views = document.createElement("p");
+  article_views.innerText = views;
+  article_views.classList.add("text-sm", "text-base-content/70");
+  article_card.appendChild(article_views);
+
+  const read_btn = document.createElement("button");
+  read_btn.innerText = "Read more";
+  read_btn.classList.add(
+    "btn",
+    "border-none",
+    "bg-[#193D32]",
+    "px-7",
+    "text-white",
+    "hover:bg-[#38634B]",
+    "md:self-auto",
+  );
+  article_card.appendChild(read_btn);
+
+  return article_card;
 }
