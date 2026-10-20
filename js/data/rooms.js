@@ -13,7 +13,7 @@ export const rooms_database = [
     name: "Double room",
     maxGuests: 2,
     baseNightPrice: 90,
-    description: "Comfortable room with a double bed for couples or friends.",
+    description: "Comfortable room with a double bed for couples.",
     ksp: "Private bathroom",
     image: "assets/rooms/double-room.jpg",
   },
@@ -32,7 +32,8 @@ export const rooms_database = [
     name: "Deluxe room with balcony",
     maxGuests: 3,
     baseNightPrice: 120,
-    description: "Spacious room with a private balcony overlooking the city.",
+    description:
+      "Spacious room with a private balcony overlooking the mountain.",
     ksp: "Minibar",
     image: "assets/rooms/deluxe-room.jpg",
   },

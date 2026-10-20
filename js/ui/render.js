@@ -179,7 +179,8 @@ export function renderBlog(articleItem) {
     "my-5",
     "p-10",
     "flex",
-    "gap-20",
+    "gap-5",
+    "lg:gap-20",
   );
 
   const card_right = document.createElement("div");
