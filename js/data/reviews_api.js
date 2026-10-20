@@ -1,7 +1,5 @@
 async function getReviews() {
-  const response = await fetch(
-    "https://jsonplaceholder.typicode.com/comments/?limit=4",
-  );
+  const response = await fetch("https://dummyjson.com/comments/?limit=6");
 
   if (!response.ok) {
     throw new Error("Data charge failed");
@@ -13,9 +11,8 @@ async function getReviews() {
 }
 
 const reviews_raw = await getReviews();
-const reviews_sliced = reviews_raw.slice(0, 5);
 
-export const reviews_list = reviews_sliced.map((review) => ({
-  name: review.name,
+export const reviews_list = reviews_raw.comments.map((review) => ({
+  name: review.user.fullName,
   body: review.body,
 }));

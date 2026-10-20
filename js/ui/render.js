@@ -142,23 +142,24 @@ export function renderReviews(reviewItem) {
   review_card.classList.add(
     "p-5",
     "bg-white",
-    "min-h-60",
+    "min-h-30",
     "flex",
     "flex-col",
     "justify-center",
     "shadow-sm",
     "rounded-lg",
     "mt-4",
+    "text-center",
   );
 
   const review_body = document.createElement("p");
   review_body.innerText = body;
-  review_body.classList.add("font-semibold", "text-left");
+  review_body.classList.add("font-semibold");
   review_card.appendChild(review_body);
 
   const review_name = document.createElement("p");
   review_name.innerText = name;
-  review_name.classList.add("text-gray-500", "text-left", "capitalize", "mt-2");
+  review_name.classList.add("text-gray-500", "capitalize", "mt-2");
   review_card.appendChild(review_name);
 
   return review_card;
