@@ -2,6 +2,7 @@ import { selectRoom } from "../utils/helpers.js";
 import { search } from "../data/search.js";
 import { reviews_list } from "../data/reviews_api.js";
 import { article_list } from "../data/blog_api.js";
+import { calcNights } from "../utils/helpers.js";
 
 export function renderRooms(roomItem) {
   const { name, baseNightPrice, description, ksp, image } = roomItem;
@@ -65,18 +66,38 @@ export function renderRooms(roomItem) {
     "shrink-0",
   );
 
+  search.stay_nights = calcNights(search.checkout_date, search.checkin_date);
+
   const price_box = document.createElement("p");
-  price_box.classList.add("sm:text-right");
+  price_box.classList.add("sm:text-right", "lg:flex", "lg:flex-col");
 
   const base_price = document.createElement("span");
   const room_price =
     baseNightPrice - baseNightPrice * 0.05 * search.children_nr;
   base_price.innerText = room_price + " €";
   base_price.classList.add("text-2xl", "font-bold");
+  if (search.stay_nights > 4) {
+    const longstay_price = room_price - room_price * 0.2;
+    base_price.innerText = longstay_price + "€";
+  }
 
   const price_unit = document.createElement("span");
   price_unit.innerText = "/ night";
   price_unit.classList.add("block", "text-xs", "text-base-content/60");
+
+  if (search.stay_nights > 4) {
+    const longstay_text = document.createElement("p");
+    longstay_text.innerText = "Long Stay Offer";
+    longstay_text.classList.add(
+      "text-sm",
+      "font-bold",
+      "badge",
+      "badge-outline",
+      "badge-warning",
+      "lg:mb-2",
+    );
+    price_box.appendChild(longstay_text);
+  }
 
   price_box.appendChild(base_price);
   price_box.appendChild(price_unit);
@@ -92,6 +113,7 @@ export function renderRooms(roomItem) {
     "text-white",
     "hover:bg-[#38634B]",
     "md:self-auto",
+    "lg:mt-2",
   );
 
   add_btn.addEventListener("click", () => {

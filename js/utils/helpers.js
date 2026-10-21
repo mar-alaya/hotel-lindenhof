@@ -33,6 +33,13 @@ export function updateSummary() {
   let total_price = search.stay_nights * price_night;
   summary_total.innerText = total_price + "€";
 
+  if (search.stay_nights > 4) {
+    const price_long = price_night - price_night * 0.2;
+    summary_price_night.innerText = price_long + "€";
+    total_price = search.stay_nights * price_long;
+    summary_total.innerText = total_price + "€";
+  }
+
   if (search.voucher) {
     const discount = total_price * 0.1;
     const new_Price = total_price - discount;
