@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script type="module" src="https://unpkg.com/cally"></script>
+    <script type="module" src="./js/activities.js" defer></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-primary: #193d32;
+        --color-secondary: #38634b;
+        --color-bg: #f7f5ef;
+        --color-accent: #b99670;
+      }
+    </style>
+    <title>Activities - Hotel Lindenhof</title>
+  </head>
+  <body>
+    <header
+      class="bg-[url(https://images.unsplash.com/photo-1783443484722-d5836eb45139?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D)] bg-cover bg-top"
+    >
+      <nav>
+        <div class="navbar gap-2 px-3 py-4 sm:px-5">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  aria-label="Menu"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="-1"
+                class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              >
+                <li><a>Hotel</a></li>
+                <li><a>Rooms</a></li>
+                <li><a>Restaurant</a></li>
+                <li><a>Blog</a></li>
+              </ul>
+            </div>
+            <a href="index.html"
+              ><img src="./assets/logo.png" class="h-10 w-auto sm:h-12 lg:h-20"
+            /></a>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul
+              class="menu menu-horizontal px-1 text-white font-semibold uppercase"
+            >
+              <li><a>Activities</a></li>
+              <li><a>Rooms</a></li>
+              <li><a>Restaurant</a></li>
+              <li><a>Blog</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <a href="booking.html" target="_blank" class="btn btn-main btn-lg"
+              >BOOK NOW</a
+            >
+          </div>
+        </div>
+      </nav>
+      <div
+        class="hero min-h-[50vh] w-full justify-start px-5 sm:px-10 md:px-20"
+      >
+        <div class="max-w-lg">
+          <h1
+            class="mb-8 font-display text-4xl leading-tight font-medium tracking-wide text-[#F7F5EF] text-shadow-lg sm:text-5xl md:text-6xl lg:text-7xl lg:leading-18"
+          >
+            Activities in the
+            <span class="tracking-wide italic font-bold">Mountains</span>
+          </h1>
+        </div>
+      </div>
+    </header>
+    <main class="bg-bg">
+      <div class="flex flex-col p-10 lg:p-20">
+        <p
+          class="mb-3 text-xs font-bold uppercase tracking-[.18em] text-accent"
+        >
+          Outdoor Activities
+        </p>
+        <h2 class="mt-3 font-serif text-4xl leading-tight md:text-5xl">
+          There's something for every pace
+        </h2>
+      </div>
+      <select class="select select-ghost">
+        <option disabled selected>All Seasons</option>
+        <option>Summer</option>
+        <option>Winter</option>
+      </select>
+
+      <select class="select select-ghost">
+        <option disabled selected>All Levels</option>
+        <option>Easy</option>
+        <option>Medium</option>
+        <option>Hard</option>
+      </select>
+
+      <div
+        id="activities-container"
+        class="flex flex-wrap items-center justify-center gap-5 mx-20"
+      ></div>
+    </main>
+  </body>
+</html>

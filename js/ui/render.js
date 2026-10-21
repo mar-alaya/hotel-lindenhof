@@ -245,3 +245,77 @@ export function renderBlog(articleItem) {
 
   return article_card;
 }
+
+export function renderActivities(activityItem) {
+  const { name, season, difficulty, duration, description, image } =
+    activityItem;
+
+  const activity_card = document.createElement("div");
+  activity_card.classList.add(
+    "flex",
+    "flex-col",
+    "items-center",
+    "gap-3",
+    "rounded-lg",
+    "bg-base-100",
+    "p-5",
+    "text-center",
+    "shadow-sm",
+    "hover:-translate-y-1",
+    "hover:shadow-lg",
+    "cursor-pointer",
+  );
+
+  const activity_image = document.createElement("img");
+  activity_image.classList.add("rounded-md", "object-cover");
+  activity_image.src = image;
+  activity_image.alt = name;
+  activity_card.appendChild(activity_image);
+
+  const activity_name = document.createElement("h2");
+  activity_name.classList.add("card-title", "text-xl");
+  activity_name.innerText = name;
+  activity_card.appendChild(activity_name);
+
+  const activity_description = document.createElement("p");
+  activity_description.classList.add("text-base", "text-base-content/70");
+  activity_description.innerText = description;
+  activity_card.appendChild(activity_description);
+
+  const activity_data = document.createElement("div");
+  activity_data.classList.add("flex", "gap-2");
+
+  const activity_season = document.createElement("p");
+  activity_season.classList.add("badge");
+  activity_season.innerText = season;
+
+  if (activityItem.season === "Summer") {
+    activity_season.classList.add("bg-[#d2b4a3]");
+  } else {
+    activity_season.classList.add("badge-neutral");
+  }
+
+  activity_data.appendChild(activity_season);
+
+  const activity_difficulty = document.createElement("p");
+  activity_difficulty.classList.add("badge", "badge-outline", "font-bold");
+  activity_difficulty.innerText = difficulty;
+
+  if (activityItem.difficulty === "Easy") {
+    activity_difficulty.classList.add("badge-success");
+  } else if (activityItem.difficulty === "Medium") {
+    activity_difficulty.classList.add("badge-warning");
+  } else {
+    activity_difficulty.classList.add("badge-error");
+  }
+
+  activity_data.appendChild(activity_difficulty);
+  activity_card.appendChild(activity_data);
+
+  const activity_duration = document.createElement("p");
+  activity_duration.classList.add("text-base-content/70");
+  activity_duration.innerText = "Approx. duration: " + duration;
+  activity_card.appendChild(activity_duration);
+
+  return activity_card;
+}
