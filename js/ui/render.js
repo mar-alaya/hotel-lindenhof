@@ -3,6 +3,7 @@ import { search } from "../data/search.js";
 import { reviews_list } from "../data/reviews_api.js";
 import { article_list } from "../data/blog_api.js";
 import { calcNights } from "../utils/helpers.js";
+import { menu_database } from "../data/menu.js";
 
 export function renderRooms(roomItem) {
   const { name, baseNightPrice, description, ksp, image } = roomItem;
@@ -318,4 +319,40 @@ export function renderActivities(activityItem) {
   activity_card.appendChild(activity_duration);
 
   return activity_card;
+}
+
+export function renderRestaurant(menuItem) {
+  const { name, description, price } = menuItem;
+
+  const menu_card = document.createElement("div");
+  menu_card.classList.add("flex", "flex-col", "gap-1", "py-4");
+
+  const card_header = document.createElement("div");
+  card_header.classList.add(
+    "flex",
+    "items-baseline",
+    "justify-between",
+    "gap-4",
+  );
+
+  const menu_name = document.createElement("h3");
+  menu_name.innerText = name;
+  menu_name.classList.add("text-lg", "font-semibold");
+
+  const menu_price = document.createElement("span");
+  menu_price.innerText = price + " €";
+  menu_price.classList.add("font-semibold");
+
+  card_header.appendChild(menu_name);
+  card_header.appendChild(menu_price);
+
+  menu_card.appendChild(card_header);
+
+  const menu_description = document.createElement("p");
+  menu_description.innerText = description;
+  menu_description.classList.add("text-sm", "text-base-content/70");
+
+  menu_card.appendChild(menu_description);
+
+  return menu_card;
 }
