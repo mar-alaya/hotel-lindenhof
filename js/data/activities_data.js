@@ -6,7 +6,7 @@ export const activities_database = [
     difficulty: "Medium",
     duration: "5 h",
     description: "A scenic ridge trail with wide views over the valley.",
-    image: "assets/activities/alpine-hike.jpg",
+    image: "./assets/activities/alpine-hike.jpg",
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ export const activities_database = [
     duration: "2 h",
     description:
       "A gentle path around a quiet mountain lake, ideal for families.",
-    image: "assets/activities/lakeside-walk.jpg",
+    image: "./assets/activities/lakeside-walk.jpg",
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ export const activities_database = [
     duration: "4 h",
     description:
       "A guided climb on secured rock routes for adventurous guests.",
-    image: "assets/activities/via-ferrata.jpg",
+    image: "./assets/activities/via-ferrata.jpg",
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ export const activities_database = [
     difficulty: "Medium",
     duration: "3 h",
     description: "Forest tracks and meadow paths on a guided e-bike ride.",
-    image: "assets/activities/mountain-bike-tour.jpg",
+    image: "./assets/activities/mountain-bike-tour.jpg",
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ export const activities_database = [
     difficulty: "Easy",
     duration: "2.5 h",
     description: "Walk through silent snowy forests with a local guide.",
-    image: "assets/activities/snowshoe-trek.jpg",
+    image: "./assets/activities/snowshoe-trek.jpg",
   },
   {
     id: 6,
@@ -53,7 +53,7 @@ export const activities_database = [
     difficulty: "Medium",
     duration: "3 h",
     description: "Groomed trails through the valley, equipment available.",
-    image: "assets/activities/cross-country-skiing.jpg",
+    image: "./assets/activities/cross-country-skiing.jpg",
   },
   {
     id: 7,
@@ -62,7 +62,7 @@ export const activities_database = [
     difficulty: "Hard",
     duration: "6 h",
     description: "An ascent on skis with a guide, for experienced skiers.",
-    image: "assets/activities/ski-touring.jpg",
+    image: "./assets/activities/ski-touring.jpg",
   },
   {
     id: 8,
@@ -71,6 +71,6 @@ export const activities_database = [
     difficulty: "Easy",
     duration: "3 h",
     description: "A relaxed walk ending with a traditional Austrian lunch.",
-    image: "assets/activities/forest-walk.jpg",
+    image: "./assets/activities/forest-walk.jpg",
   },
 ];

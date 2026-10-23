@@ -6,7 +6,7 @@ export const rooms_database = [
     baseNightPrice: 65,
     description: "Compact and quiet room, ideal for solo travellers.",
     ksp: "Work desk",
-    image: "assets/rooms/single-room/single-room.jpg",
+    image: "./assets/rooms/single-room/single-room.jpg",
   },
   {
     id: 2,
@@ -15,7 +15,7 @@ export const rooms_database = [
     baseNightPrice: 90,
     description: "Comfortable room with a double bed for couples.",
     ksp: "Private bathroom",
-    image: "assets/rooms/double-room/double-room.jpg",
+    image: "./assets/rooms/double-room/double-room.jpg",
   },
   {
     id: 3,
@@ -25,7 +25,7 @@ export const rooms_database = [
     description:
       "Bright room with two separate beds, perfect for colleagues or friends.",
     ksp: "Street view",
-    image: "assets/rooms/twin-room/twin-room.jpg",
+    image: "./assets/rooms/twin-room/twin-room.jpg",
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ export const rooms_database = [
     description:
       "Spacious room with a private balcony overlooking the mountain.",
     ksp: "Minibar",
-    image: "assets/rooms/deluxe-room/deluxe-room.jpg",
+    image: "./assets/rooms/deluxe-room/deluxe-room.jpg",
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ export const rooms_database = [
     baseNightPrice: 170,
     description: "Large room with space for the whole family.",
     ksp: "Extra beds",
-    image: "assets/rooms/family-room/family-room.jpg",
+    image: "./assets/rooms/family-room/family-room.jpg",
   },
   {
     id: 6,
@@ -53,6 +53,6 @@ export const rooms_database = [
     baseNightPrice: 210,
     description: "Elegant suite with a separate living area.",
     ksp: "Jacuzzi",
-    image: "assets/rooms/junior-suite/junior-suite.jpg",
+    image: "./assets/rooms/junior-suite/junior-suite.jpg",
   },
 ];
